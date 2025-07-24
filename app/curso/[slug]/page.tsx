@@ -1,12 +1,12 @@
 import CursoClientPage from "./CursoClientPage"
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   // Asegurar que estas rutas se generen estáticamente
   return [{ slug: "serpientes" }, { slug: "envenenamiento-serpientes" }, { slug: "aranas-alacranes" }]
 }
 
 // Agregar metadata para SEO
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export function generateMetadata({ params }: { params: { slug: string } }) {
   const cursosData = {
     serpientes: {
       title: "Curso de Serpientes - Serpentario",
