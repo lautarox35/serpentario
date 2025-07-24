@@ -145,6 +145,16 @@ export default function Component() {
     ))
   }
 
+  const scrollToCursos = () => {
+    const cursosSection = document.getElementById("cursos")
+    if (cursosSection) {
+      cursosSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-amber-50">
       {/* Header */}
@@ -190,13 +200,21 @@ export default function Component() {
             expertos y obtén conocimientos científicos fundamentales para tu desarrollo profesional.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#62825d] hover:bg-[#5a7355] shadow-lg border-0">
+            <Button size="lg" className="bg-[#62825d] hover:bg-[#5a7355] shadow-lg border-0" onClick={scrollToCursos}>
               Ver Cursos
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-[#62825d] bg-white/10 backdrop-blur-sm"
+              onClick={() => {
+                const numeroWhatsApp = "5493544593134"
+                const mensaje = encodeURIComponent(
+                  "¡Hola! Me gustaría obtener más información sobre los cursos de Academia del Serpentario Machaqway. ¿Podrían ayudarme?",
+                )
+                const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`
+                window.open(urlWhatsApp, "_blank")
+              }}
             >
               Más Información
             </Button>
