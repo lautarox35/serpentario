@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Asegurar que las rutas dinámicas se generen
+  // Asegurar que las rutas dinámicas se generen correctamente
   generateBuildId: async () => {
     return 'serpentario-build'
   }
